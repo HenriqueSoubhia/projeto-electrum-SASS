@@ -1,0 +1,101 @@
+@use '../1-base/variables' as vs
+@use '../1-base/base-mixins' as bm
+@use 'layouts-mixin' as lm
+
+.header
+    background-color: vs.$bg-color
+
+    &-top
+        background-color: vs.$secundary-bg-color
+        color: vs.$light-color
+
+        @include bm.mobile
+            display: none
+
+        &-container
+            @include lm.center-content
+            padding: .8rem 0
+
+            @include bm.mobile
+                flex-direction: column
+            
+            span
+                margin-right: 1rem
+
+            i
+                margin-right: .3rem
+            
+            a
+                color: vs.$light-color
+            
+.main-header
+
+    &-container
+        @include lm.center-content
+        padding: 1.3rem 0
+
+        @include bm.mobile
+            flex-direction: column
+            align-items: center
+
+        a,span, i
+            color:#fff
+
+        #brad
+            font-weight: 900
+            font-size: 3rem
+
+            i
+                color: vs.$primary-color
+                font-size: 2rem
+
+        #search-form
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 45%
+
+            @include bm.mobile
+                width: 100%
+                margin: 2rem 0
+        
+            input
+                height: 40px
+
+            #search
+                @include lm.rounded-input
+                width: 60%
+            
+        .header-action-menu
+            display: flex
+            align-items: center
+
+            .wishlist-container, .header-cart-container
+                @include lm.header-icon
+
+                @include bm.mobile
+                    margin: 1rem
+
+.header-bottom
+    background-color: vs.$light-color
+    border-bottom: 2px solid vs.$section-bg-color
+    border-top: 3px solid vs.$primary-color
+
+    ul
+        @include lm.center-content
+        justify-content: left
+        padding: 1rem 0
+
+        @include bm.mobile
+            display: none
+            
+        li
+            margin-right: 1.3rem
+
+            a
+                color: vs.$link-color
+                border-bottom: 2px solid transparent
+
+                &:hover
+                    color: vs.$primary-color
+                    border-color: vs.$primary-color

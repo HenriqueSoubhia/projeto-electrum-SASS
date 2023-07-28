@@ -1,0 +1,11 @@
+@use '../1-base/_base-mixins' as bm
+@use 'layouts-mixin' as lm
+
+.banners
+    @include lm.center-content
+    padding: 3rem 0
+
+    @include bm.mobile
+        flex-direction: column
+        align-items: center
+
